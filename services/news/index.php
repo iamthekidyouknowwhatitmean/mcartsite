@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Новости");
 $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir());
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
-	"",
+	"mcart",
 	Array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -28,6 +28,7 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array("",""),
 		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DISPLAY_AS_RATING" => "rating",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -35,12 +36,13 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "1",
+		"IBLOCK_ID" => "6",
 		"IBLOCK_TYPE" => "news",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array("",""),
-		"LIST_PROPERTY_CODE" => array("",""),
+		"LIST_PROPERTY_CODE" => array("","DISLIKE","LIKE",""),
+		"MAX_VOTE" => "5",
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -68,10 +70,11 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
-		"USE_RATING" => "N",
+		"USE_RATING" => "Y",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N"
+		"USE_SHARE" => "N",
+		"VOTE_NAMES" => array("1","2","3","4","5","")
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

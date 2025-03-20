@@ -96,9 +96,9 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 	</div>
 </div>
  <?endif;?> <?$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"announcements_news", 
-	array(
+	"bitrix:news",
+	"announcements_news",
+	Array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -115,28 +115,11 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_TEXT",
-			2 => "PREVIEW_PICTURE",
-			3 => "DETAIL_TEXT",
-			4 => "DETAIL_PICTURE",
-			5 => "",
-		),
+		"DETAIL_FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","DETAIL_PICTURE",""),
 		"DETAIL_PAGER_SHOW_ALL" => "N",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "BATHROOMS",
-			1 => "FLOORS",
-			2 => "GARAGE",
-			3 => "AREA",
-			4 => "LINKS",
-			5 => "PRICE",
-			6 => "IMAGES",
-			7 => "ADDITIONAL",
-			8 => "",
-		),
+		"DETAIL_PROPERTY_CODE" => array("BATHROOMS","FLOORS","GARAGE","AREA","LINKS","PRICE","IMAGES","ADDITIONAL",""),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
@@ -149,21 +132,8 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"IBLOCK_TYPE" => "Announcements",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_TEXT",
-			2 => "PREVIEW_PICTURE",
-			3 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "BATHROOMS",
-			1 => "FLOORS",
-			2 => "GARAGE",
-			3 => "AREA",
-			4 => "PRICE",
-			5 => "IMAGES",
-			6 => "",
-		),
+		"LIST_FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE",""),
+		"LIST_PROPERTY_CODE" => array("BATHROOMS","FLOORS","GARAGE","AREA","PRICE","IMAGES",""),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -178,6 +148,7 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_FOLDER" => "/announcements/",
 		"SEF_MODE" => "Y",
+		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -187,6 +158,7 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
+		"TOP_TITLE" => "New properties for you",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
@@ -194,14 +166,6 @@ $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir())
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => "announcements_news",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
-	false
-);?><br>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+		"USE_SHARE" => "N"
+	)
+);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
