@@ -97,8 +97,7 @@ $page = $APPLICATION->GetCurPage();
             );?>
           </div>
         </div>
-      </div>
-
+      </div>    
     </div>
     <div class="site-navbar">
       <div class="container py-1">
@@ -117,24 +116,24 @@ $page = $APPLICATION->GetCurPage();
             </h1>
           </div>
           <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"top_menu", 
-	array(
-		"ROOT_MENU_TYPE" => "top",
-		"MAX_LEVEL" => "4",
-		"CHILD_MENU_TYPE" => "subtop",
-		"USE_EXT" => "N",
-		"DELAY" => "N",
-		"ALLOW_MULTI_SELECT" => "Y",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"COMPONENT_TEMPLATE" => "top_menu"
-	),
-	false
-);?>   
+          "bitrix:menu", 
+          "top_menu", 
+          array(
+            "ROOT_MENU_TYPE" => "top",
+            "MAX_LEVEL" => "4",
+            "CHILD_MENU_TYPE" => "subtop",
+            "USE_EXT" => "N",
+            "DELAY" => "N",
+            "ALLOW_MULTI_SELECT" => "Y",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_CACHE_GET_VARS" => array(
+            ),
+            "COMPONENT_TEMPLATE" => "top_menu"
+          ),
+          false
+        );?>   
         </div>
       </div>
     </div>
@@ -155,6 +154,5 @@ $page = $APPLICATION->GetCurPage();
         </div>
       </div>
     </div>
-      
     <?endif;?>
   </div>
