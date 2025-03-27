@@ -12,25 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?
-// $user = $USER->GetID();
-// var_dump($GLOBALS['USER']->GetID());
-// $res = CIBlockElement::GetList(Array(), Array("IBLOCK_ID" => 4,"CREATED_BY" => $user), false, false, Array());
-// while($ob = $res->GetNextElement())
-// {
-// 	echo '<pre>';
-// 	$arFields = $ob->GetFields();
-// 	print_r($arFields);
-// 	echo '</pre>';
-// }
 
-
-
-// echo '<pre>';
-// print_r($arResult["ITEMS"]);
-// echo '</pre>';
-
-?>
 <div class="site-section site-section-sm bg-light">
 	<div class="container">
 		<div class="row mb-5">
