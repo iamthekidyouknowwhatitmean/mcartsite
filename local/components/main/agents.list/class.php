@@ -168,9 +168,17 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
          * Получить Избранных агентов для текущего пользователя записать их в массив $this->arResult['STAR_AGENTS']
          * Это можно зделать с помощью CUserOptions::GetOption
          */
+        global $USER;
         $category = 'agents';
         $name = 'options_agents_star';
-        $this->arResult['STAR_AGENTS'] = CUserOptions::GetOption($category, $name);
+        if(CUserOptions::GetOption($category, $name,false,(int)($USER->GetID()))){
+            $this->arResult['STAR_AGENTS'] = CUserOptions::GetOption($category, $name,false,(int)($USER->GetID()));
+        }else{
+            CUserOptions::SetOption($category, $name, Array(),false,(int)($USER->GetID()));
+        }
+        
+        
+        
         /*
          * Данного метода нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
          * $category - это категория настройки, можете придумать любую, например mcart_agent
@@ -368,8 +376,9 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
          * (его нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
          * 5. Отправить на фронт в массиве $result в ключе 'action' значение 'success', если все прошло удачно
         */
-        
-        $userOption = CUserOptions::GetOption("agents", "options_agents_star");
+        global $USER;
+        $fl = true;
+        $userOption = CUserOptions::GetOption("agents", "options_agents_star",false,(int)($USER->GetID()));
         if($userOption){ // 2
             if(!(gettype($userOption) === "array")){
                 unset($userOption);
@@ -377,19 +386,20 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             }
             foreach($userOption as $k => $v){
                 if($v === $agentID){
+                    $fl = false;
                     unset($userOption[$k]); // удаление из массива
                 }
-                else{ // если нет в массиве, добавить
-                    $t = count($userOption) + 1;
-                    $value['agentID'.$t] = $agentID;
-                }
             }
-        }else{
+            if($fl === true){ // если нет, добавить в массив
+                $t = count($userOption) + 1;
+                $value['agentID'.$t] = $agentID;
+            }
+        }elseif(count($userOption) === 0){
             $value['agentID'] = $agentID; // 3.
         }
         
         $value = array_merge($value,$userOption);
-        $success = CUserOptions::SetOption("agents", "options_agents_star", $value);// 4.
+        $success = CUserOptions::SetOption("agents", "options_agents_star", $value,false,(int)($USER->GetID()));// 4.
         if($success){ // 5.
             $result["action"] = "success";
         }
