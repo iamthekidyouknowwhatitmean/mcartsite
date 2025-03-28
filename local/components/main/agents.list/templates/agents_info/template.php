@@ -17,16 +17,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 $this->setFrameMode(true);
 ?>
 
-<?
-global $USER;
-$userOption = CUserOptions::GetOption("agents", "options_agents_star",false, (int)($USER->GetID()));
-echo "<pre>";
-print_r($userOption);
-echo "</pre>";
-// echo "<pre>";
-// print_r($arResult);
-// echo "</pre>";
-?>
 <div class="site-section site-section-sm bg-light">
     <div class="container agents-list">
     <div class="row mb-5">
