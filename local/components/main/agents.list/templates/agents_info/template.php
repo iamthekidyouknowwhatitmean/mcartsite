@@ -20,13 +20,12 @@ $this->setFrameMode(true);
 <?
 global $USER;
 $userOption = CUserOptions::GetOption("agents", "options_agents_star",false, (int)($USER->GetID()));
-// echo "<pre>";
-// print_r($userOption);
-// echo "</pre>";
+echo "<pre>";
+print_r($userOption);
+echo "</pre>";
 // echo "<pre>";
 // print_r($arResult);
 // echo "</pre>";
-
 ?>
 <div class="site-section site-section-sm bg-light">
     <div class="container agents-list">
@@ -41,7 +40,7 @@ $userOption = CUserOptions::GetOption("agents", "options_agents_star",false, (in
         <?foreach($arResult["AGENTS"]["ITEMS"] as $agent):?>
             <div class="agent__card">
                 <div class="small-info">
-                    <div class="avatar" style="background-image: url(<?if($agent["UF_PHOTO"]):?><?=$agent["UF_PHOTO"]?><?else:?><?=SITE_TEMPLATE_PATH?>/components/main/agents.list/agents_info/images/no-avatar.png<?endif;?>);"></div>
+                    <div class="avatar" style="background-image: url(<?if($agent["UF_PHOTO"]):?><?=$agent["UF_PHOTO"]?><?else:?>/local/components/main/agents.list/templates/agents_info/images/no-avatar.png<?endif;?>);"></div>
                     <div class="info">
                         <div class="name"><?=$agent["UF_FIO"]?></div>
                     </div>
@@ -62,14 +61,16 @@ $userOption = CUserOptions::GetOption("agents", "options_agents_star",false, (in
                         </div>
                     </div>
                 </div>
-
                 
-                <a class="star 
-                 <?foreach($arResult["STAR_AGENTS"] as $star):?>
-                    <?if($agent["ID"] === $star):?>
-                        active
-                    <?endif;?>
-                <?endforeach;?>" data-id="<?=$agent["ID"]?>">
+                <?
+                $t = '';
+                foreach($arResult['STAR_AGENTS'] as $star){
+                    if($agent["ID"] === $star){
+                        $t = "active";
+                        break;
+                    }
+                }?>
+                <a class="star <?=$t?>" data-id="<?=$agent["ID"]?>">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 4L14.472 9.26604L20 10.1157L16 14.2124L16.944 20L12 17.266L7.056 20L8 14.2124L4 10.1157L9.528 9.26604L12 4Z" stroke="#95929A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>

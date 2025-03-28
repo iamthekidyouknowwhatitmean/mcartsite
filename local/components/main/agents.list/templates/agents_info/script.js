@@ -35,9 +35,12 @@ BX.ready(function() {
                             if (data['action'] == 'success') {
                                 console.log("Добавилось");
                                 // Отобразить пользоватиелю, что агент добавлен в избраное (желтая звездочка, есть в верстке)
-                               
-                                this.classList.add('active');                   
-                                
+                               if(this.className === 'star active'){
+                                    this.classList.remove('active');
+                                }else{
+                                    this.classList.add('active');
+                                }
+                                    
                             }
         
                         }, this)

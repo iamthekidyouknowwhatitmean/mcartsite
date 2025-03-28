@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Агенты");
 $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir());
 ?><?$APPLICATION->IncludeComponent(
 	"main:agents.list",
-	"",
+	"agents_info",
 	Array(
 		"AGENTS_COUNT" => "3",
 		"CACHE_TIME" => "0",
