@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"История", 
+		"hisrory/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Команда", 
+		"team/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Присоединиться", 
+		"join/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

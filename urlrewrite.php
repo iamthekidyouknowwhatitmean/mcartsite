@@ -8,6 +8,22 @@ $arUrlRewrite=array (
     'PATH' => '/services/vacancies/index.php',
     'SORT' => 100,
   ),
+  22 => 
+  array (
+    'CONDITION' => '#^/training/portfolio/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/training/portfolio/index.php',
+    'SORT' => 100,
+  ),
+  20 => 
+  array (
+    'CONDITION' => '#^/training/products/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/training/products/index.php',
+    'SORT' => 100,
+  ),
   17 => 
   array (
     'CONDITION' => '#^/seller/products/#',
@@ -30,6 +46,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/announcements/index.php',
+    'SORT' => 100,
+  ),
+  21 => 
+  array (
+    'CONDITION' => '#^/training/news/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/training/news/index.php',
     'SORT' => 100,
   ),
   1 => 
