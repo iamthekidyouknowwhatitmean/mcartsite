@@ -10,14 +10,17 @@ if($res !== '/training/'){?>
 			<div class="container position-relative">
 				<h1><?=$APPLICATION -> ShowTitle()?></h1>
 				<p><?=$APPLICATION -> ShowProperty("page_text_under_title")?></p>
-				<nav class="breadcrumbs">
-					<ol>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Раздел 1</a></li>
-						<li><a href="#">Раздел 1.1</a></li>
-						<li class="current">Заголовок страницы</li>
-					</ol>
-				</nav>
+				<?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"breadcrumb_dev", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "t1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "breadcrumb_dev"
+	),
+	false
+);?>
 			</div>
 		</div><!-- End Page Title -->
 <?}?>

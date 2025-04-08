@@ -12,11 +12,23 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
 
 					<div class="service-box">
 						<div class="services-list">
-							<a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 1</span></a>
-							<a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 2 -
-									активный</span></a>
-							<a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 3</span></a>
-							<a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 4</span></a>
+						<?$APPLICATION->IncludeComponent("bitrix:menu", "left_menu", Array(
+							"CACHE_SELECTED_ITEMS" => "Y",
+							"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+							"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+							"DELAY" => "N",	// Откладывать выполнение шаблона меню
+							"MAX_LEVEL" => "1",	// Уровень вложенности меню
+							"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+								0 => "",
+							),
+							"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+							"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+							"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+							"ROOT_MENU_TYPE" => "left",	// Тип меню для первого уровня
+							"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+						),
+						false
+					);?>
 						</div>
 					</div>
 
@@ -37,3 +49,24 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
 								href="mailto:contact@example.com">contact@company.ru</a></p>
 					</div>
 				</div>
+
+				<div class="col-lg-8 ps-lg-5">
+
+						<!-- Content Page Title -->
+						<div class="page-content-title">
+							<div class="position-relative">
+								<h1><?=$APPLICATION -> ShowTitle()?></h1>
+								<p>
+									<?=$APPLICATION -> ShowProperty("page_text_under_title")?>
+								</p>
+								<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "breadcrumb_content", Array(
+									"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+										"SITE_ID" => "t1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+										"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+									),
+									false
+								);?>
+							</div>
+						</div>
+
+

@@ -28,4 +28,4 @@ $APPLICATION->SetTitle("Главная");
 		"EDIT_TEMPLATE" => "",
 		"PATH" => DEFAULT_TEMPLATE_PATH."/include/main/about.php"
 	)
-);?> </main><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?></main><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

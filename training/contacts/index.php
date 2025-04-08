@@ -2,6 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("page_text_under_title", "Свяжитесь с нами — мы всегда готовы помочь и ответить на ваши вопросы");
 $APPLICATION->SetTitle("Контакты");
+$APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir());
+
 ?>
 
 <section id="contact" class="contact section">

@@ -3,15 +3,12 @@
             <div class="footer-search">
                 <div class="container">
                     <div class="row justify-content-center text-center">
-                        <div class="col-lg-6">
-                            <h4>Поиск</h4>
-                            <form action="/training/search/" method="post">
-                                <div class="search-form">
-                                    <input class="input-seach" type="text" name="q">
-                                    <input class="button-seach" name="s" type="submit" value="Найти">
-                                </div>
-                            </form>
-                        </div>
+                        <?$APPLICATION->IncludeComponent("bitrix:search.form", "search_footer", Array(
+                            "PAGE" => "#SITE_DIR#search/index.php",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+                                "USE_SUGGEST" => "N",	// Показывать подсказку с поисковыми фразами
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Дашборд", 
+		"dashboard/", 
+		Array(), 
+		Array("menu_ico"=>"bi-grid"), 
+		"" 
+	),
+	Array(
+		"Основные", 
+		"main/", 
+		Array(), 
+		Array("menu_ico"=>"bi-menu-button-wide"),
+		"" 
+	),
+	Array(
+		"Дополнительные", 
+		"extra/", 
+		Array(), 
+		Array("menu_ico"=>"bi-files"),
+		"" 
+	),
+	Array(
+		"Профиль", 
+		"profile/", 
+		Array(), 
+		Array("menu_ico"=>"bi-person"),
+		"" 
+	)
+);
+?>

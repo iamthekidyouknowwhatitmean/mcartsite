@@ -103,10 +103,6 @@ new BX.PhoneAuth({
 <?else:?>
 <div class="site-section">
 	<div class="container">
-
-
-
-		
 		<label class="font-weight-bold"><?=GetMessage("AUTH_REGISTER")?></label>
 		<div class="row">
 			<div class="col-md-12 col-lg-8 mb-5">

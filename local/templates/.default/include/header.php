@@ -38,7 +38,7 @@
             <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
                 <a href="#" class="logo d-flex align-items-center">
-                    <h1 class="sitename"><?echo Loc::getMessage("MAIN_NAME");?></h1>
+                    <h1 class="sitename"><?=Loc::getMessage("MAIN_NAME");?></h1>
                 </a>
                 <?$APPLICATION->IncludeComponent(
                 "bitrix:menu", 
@@ -47,7 +47,7 @@
                     "ROOT_MENU_TYPE" => "top",
                     "MAX_LEVEL" => "4",
                     "CHILD_MENU_TYPE" => "left",
-                    "USE_EXT" => "N",
+                    "USE_EXT" => "Y",
                     "DELAY" => "N",
                     "ALLOW_MULTI_SELECT" => "Y",
                     "MENU_CACHE_TYPE" => "N",

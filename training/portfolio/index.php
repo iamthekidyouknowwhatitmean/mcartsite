@@ -2,6 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("page_text_under_title", "Ознакомьтесь с нашими успешными проектами и реализованными решениями.");
 $APPLICATION->SetTitle("Портфолио");
+$APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir());
+
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	"portfolio",
@@ -22,12 +24,13 @@ $APPLICATION->SetTitle("Портфолио");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"COMPATIBLE_MODE" => "N",
+		"COMPONENT_TEMPLATE" => "portfolio",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(0=>"POPUP",1=>"MAGNIFIER",),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -110,7 +113,7 @@ $APPLICATION->SetTitle("Портфолио");
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/training/portfolio/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"compare.php?action=#ACTION_CODE#","element"=>"#SECTION_ID#/#ELEMENT_ID#/","section"=>"#SECTION_ID#/","sections"=>"","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"),
+		"SEF_URL_TEMPLATES" => array("sections"=>"","section"=>"#SECTION_ID#/","element"=>"#SECTION_ID#/#ELEMENT_ID#/","compare"=>"compare.php?action=#ACTION_CODE#","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -147,6 +150,7 @@ $APPLICATION->SetTitle("Портфолио");
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
-		"USE_STORE" => "N"
+		"USE_STORE" => "N",
+		"VARIABLE_ALIASES" => array("compare"=>array("ACTION_CODE"=>"action",),)
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -3,7 +3,6 @@ $APPLICATION->SetTitle("Мебельная компания");
 ?><?
 $arrFilter = array("!PROPERTY_DEAL"=> false);
 ?> 
-
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"main_slider",

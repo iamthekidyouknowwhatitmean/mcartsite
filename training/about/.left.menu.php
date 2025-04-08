@@ -2,23 +2,23 @@
 $aMenuLinks = Array(
 	Array(
 		"История", 
-		"hisrory/", 
+		"history/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi-bookshelf"), 
 		"" 
 	),
 	Array(
 		"Команда", 
 		"team/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi-people"), 
 		"" 
 	),
 	Array(
 		"Присоединиться", 
 		"join/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi-arrow-right-circle"), 
 		"" 
 	)
 );

@@ -6,8 +6,6 @@ if(empty($arResult))
 $elCount = count($arResult);
 $strReturn = '<div>';
               						
-
-
 for($i = 0; $i < $elCount-2;$i++){
 	$link = $arResult[$i]['LINK'];
 	$title = $arResult[$i]['TITLE'] ?? '';

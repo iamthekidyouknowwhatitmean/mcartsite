@@ -41,7 +41,7 @@ $this->setFrameMode(true);
 						</div>
 						<div class="card-body">
 							<h5 class="title"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h5>
-							<p class="card-text"><?$arItem["DETAIL_TEXT"]?></p>
+							<p class="card-text"><?=$arItem["PREVIEW_TEXT"]?></p>
 						</div>
 					</article>
 				</div><!-- End list item -->
